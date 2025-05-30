@@ -16,10 +16,42 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.open('https://llaisolutions-my.sharepoint.com/:x:/g/personal/operations_ll-aisolutions_com/EbO5Ragy1kNFk468G9tZA1cBBySKCMRMCZRsMyxoMyS5wA?e=pWtGT1', '_blank');
-    setFormSubmitted(true);
+    
+    try {
+      const response = await fetch('https://api.apispreadsheets.com/data/QJxbGQxqGQxEGQx/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          data: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            whatsapp: formData.whatsapp,
+            companyOrStudent: formData.companyOrStudent
+          },
+        }),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          whatsapp: '',
+          companyOrStudent: '',
+        });
+      } else {
+        alert('There was an error submitting the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form. Please try again.');
+    }
   };
 
   return (
@@ -202,12 +234,12 @@ const Contact = () => {
                     
                     <div>
                       <label htmlFor="companyOrStudent" className="block text-sm font-medium text-gray-700 mb-1">
-                        Company Name 
+                        Company/Student Name *
                       </label>
                       <input
                         type="text"
-                        id="company"
-                        name="company"
+                        id="companyOrStudent"
+                        name="companyOrStudent"
                         value={formData.companyOrStudent}
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
