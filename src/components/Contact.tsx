@@ -6,18 +6,19 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    message: '',
+    phone: '',
+    whatsapp: '',
+    companyOrStudent: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open('https://llaisolutions-my.sharepoint.com/:x:/g/personal/operations_ll-aisolutions_com/EbO5Ragy1kNFk468G9tZA1cBHQkOP-9pt_n4_ZzTvyOAQA?e=s9fNCf', '_blank');
+    window.open('https://llaisolutions-my.sharepoint.com/:x:/g/personal/operations_ll-aisolutions_com/EbO5Ragy1kNFk468G9tZA1cBBySKCMRMCZRsMyxoMyS5wA?e=pWtGT1', '_blank');
     setFormSubmitted(true);
   };
 
@@ -123,7 +124,7 @@ const Contact = () => {
                   <button 
                     onClick={() => {
                       setFormSubmitted(false);
-                      setFormData({ name: '', email: '', company: '', message: '' });
+                      setFormData({ name: '', email: '', phone: '', whatsapp: '', companyOrStudent: '' });
                     }}
                     className="btn-primary"
                   >
@@ -134,10 +135,10 @@ const Contact = () => {
                 <form onSubmit={handleSubmit}>
                   <h3 className="text-2xl font-semibold mb-6 text-gray-900">Send Us a Message</h3>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Your Name
+                        Your Name *
                       </label>
                       <input
                         type="text"
@@ -153,7 +154,7 @@ const Contact = () => {
                     
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email Address
+                        Email Address *
                       </label>
                       <input
                         type="email"
@@ -166,44 +167,61 @@ const Contact = () => {
                         required
                       />
                     </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      placeholder="How can we help you?"
-                      required
-                    ></textarea>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="+91 XXXXXXXXXX"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-700 mb-1">
+                        WhatsApp Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="whatsapp"
+                        name="whatsapp"
+                        value={formData.whatsapp}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="+91 XXXXXXXXXX"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="companyOrStudent" className="block text-sm font-medium text-gray-700 mb-1">
+                        Company Name / Student Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="companyOrStudent"
+                        name="companyOrStudent"
+                        value={formData.companyOrStudent}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        placeholder="Enter company or student name"
+                        required
+                      />
+                    </div>
                   </div>
                   
                   <button
                     type="submit"
-                    className="btn-primary w-full flex items-center justify-center"
+                    className="btn-primary w-full flex items-center justify-center mt-6"
                   >
-                    Send Message
+                    Submit
                     <Send className="ml-2 w-4 h-4" />
                   </button>
                 </form>
