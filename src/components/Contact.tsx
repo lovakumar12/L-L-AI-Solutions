@@ -16,42 +16,10 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try {
-      const response = await fetch('https://api.apispreadsheets.com/data/QJxbGQxqGQxEGQx/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          data: {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            whatsapp: formData.whatsapp,
-            companyOrStudent: formData.companyOrStudent
-          },
-        }),
-      });
-
-      if (response.ok) {
-        setFormSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          whatsapp: '',
-          companyOrStudent: '',
-        });
-      } else {
-        alert('There was an error submitting the form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting the form. Please try again.');
-    }
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdlYCwJGmL2zMwopItaPNcHyhbI6Z251kCPxiyBh6m7MGD6Dw/viewform?usp=header', '_blank');
+    setFormSubmitted(true);
   };
 
   return (
@@ -149,9 +117,9 @@ const Contact = () => {
               {formSubmitted ? (
                 <div className="text-center py-10">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                  <h3 className="text-2xl font-semibold mb-2">Message Sent!</h3>
+                  <h3 className="text-2xl font-semibold mb-2">Thank you!</h3>
                   <p className="text-gray-600 mb-8">
-                    Thank you for reaching out. Our team will get back to you shortly.
+                    You will be redirected to our contact form.
                   </p>
                   <button 
                     onClick={() => {
