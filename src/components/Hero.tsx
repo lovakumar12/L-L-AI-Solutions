@@ -2,7 +2,7 @@ import { ArrowRight, Brain, Sparkles, GraduationCap } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-800 to-secondary-900">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center"></div>
@@ -20,24 +20,24 @@ const Hero = () => {
           <div className="lg:w-1/2 space-y-6 mb-12 lg:mb-0">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full py-1.5 px-3 mb-6 border border-white/20">
               <Sparkles className="h-4 w-4 text-accent-300 mr-2" />
-              <span className="text-white/90 text-sm">AI Solutions & Education</span>
+              <span className="text-white/90 text-sm">Software Solutions & Training</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight">
-              Transform Your Future with <span className="text-accent-300">AI Excellence</span>
+              Empowering Innovation with <span className="text-accent-300">AI Solutions</span>
             </h1>
             
             <p className="text-lg text-white/80 md:pr-12">
-              L&L AI Software Solutions combines cutting-edge AI development with comprehensive education programs to empower businesses and individuals in the digital age.
+              L&L AI Solutions bridges technology and talent through cutting-edge software development and comprehensive training programs that prepare professionals for tomorrow's digital world.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="#contact" className="btn-primary flex items-center justify-center sm:justify-start">
-                Get Started
+              <a href="#software-solutions" className="btn-primary flex items-center justify-center sm:justify-start">
+                Explore Solutions
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
-              <a href="#solutions" className="btn-outline bg-white/10 text-white border-white/30 hover:bg-white/20 flex items-center justify-center sm:justify-start">
-                Explore Programs
+              <a href="#training" className="btn-outline bg-white/10 text-white border-white/30 hover:bg-white/20 flex items-center justify-center sm:justify-start">
+                Training Programs
               </a>
             </div>
             
@@ -48,11 +48,11 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-3xl font-bold text-white">50+</h3>
-                <p className="text-white/70 text-sm">AI Solutions</p>
+                <p className="text-white/70 text-sm">Software Solutions</p>
               </div>
               <div className="text-center">
                 <h3 className="text-3xl font-bold text-white">100%</h3>
-                <p className="text-white/70 text-sm">Success Rate</p>
+                <p className="text-white/70 text-sm">Placement Support</p>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Hero = () => {
                   <div className="p-1.5 rounded-full bg-primary-100">
                     <GraduationCap className="h-4 w-4 text-primary-600" />
                   </div>
-                  <div className="text-sm font-medium">Tech Education</div>
+                  <div className="text-sm font-medium">Tech Training</div>
                 </div>
               </div>
             </div>

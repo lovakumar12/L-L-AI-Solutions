@@ -27,20 +27,12 @@ const Header = ({ isScrolled }: HeaderProps) => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <a 
-            href="#solutions" 
+            href="#home" 
             className={`font-medium transition-colors duration-300 ${
               isScrolled ? 'text-gray-800 hover:text-primary-600' : 'text-white hover:text-accent-200'
             }`}
           >
-            Solutions
-          </a>
-          <a 
-            href="#industries" 
-            className={`font-medium transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800 hover:text-primary-600' : 'text-white hover:text-accent-200'
-            }`}
-          >
-            Industries
+            Home
           </a>
           <a 
             href="#about" 
@@ -48,7 +40,23 @@ const Header = ({ isScrolled }: HeaderProps) => {
               isScrolled ? 'text-gray-800 hover:text-primary-600' : 'text-white hover:text-accent-200'
             }`}
           >
-            About Us
+            About
+          </a>
+          <a 
+            href="#training" 
+            className={`font-medium transition-colors duration-300 ${
+              isScrolled ? 'text-gray-800 hover:text-primary-600' : 'text-white hover:text-accent-200'
+            }`}
+          >
+            Training & Placement
+          </a>
+          <a 
+            href="#software-solutions" 
+            className={`font-medium transition-colors duration-300 ${
+              isScrolled ? 'text-gray-800 hover:text-primary-600' : 'text-white hover:text-accent-200'
+            }`}
+          >
+            AI Software Solutions
           </a>
           <a 
             href="#contact" 
@@ -59,7 +67,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
             }`}
           >
             <Sparkles className="mr-2 h-4 w-4" />
-            Get Started
+            Contact Us
           </a>
         </nav>
 
@@ -82,25 +90,32 @@ const Header = ({ isScrolled }: HeaderProps) => {
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 animate-fade-in">
           <div className="container-custom flex flex-col space-y-4">
             <a 
-              href="#solutions" 
+              href="#home" 
               className="font-medium text-gray-800 hover:text-primary-600 py-2"
               onClick={toggleMenu}
             >
-              Solutions
-            </a>
-            <a 
-              href="#industries" 
-              className="font-medium text-gray-800 hover:text-primary-600 py-2"
-              onClick={toggleMenu}
-            >
-              Industries
+              Home
             </a>
             <a 
               href="#about" 
               className="font-medium text-gray-800 hover:text-primary-600 py-2"
               onClick={toggleMenu}
             >
-              About Us
+              About
+            </a>
+            <a 
+              href="#training" 
+              className="font-medium text-gray-800 hover:text-primary-600 py-2"
+              onClick={toggleMenu}
+            >
+              Training & Placement
+            </a>
+            <a 
+              href="#software-solutions" 
+              className="font-medium text-gray-800 hover:text-primary-600 py-2"
+              onClick={toggleMenu}
+            >
+              AI Software Solutions
             </a>
             <a 
               href="#contact" 
@@ -108,7 +123,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
               onClick={toggleMenu}
             >
               <Sparkles className="mr-2 h-4 w-4" />
-              Get Started
+              Contact Us
             </a>
           </div>
         </div>

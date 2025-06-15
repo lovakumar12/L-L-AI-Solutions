@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
-import Industries from './components/Industries';
-import Solutions from './components/Solutions';
+import Training from './components/Training';
+import SoftwareSolutions from './components/SoftwareSolutions';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -33,9 +32,8 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Services />
-        <Industries />
-        <Solutions />
+        <Training />
+        <SoftwareSolutions />
         <Contact />
       </main>
       <Footer />
